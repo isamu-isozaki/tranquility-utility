@@ -31,12 +31,10 @@ let RunTranq = function() {
 					console.log("Invalid JSON");
 					return false;
 				}
+				self.start();
+				console.log("Successfully loaded data");
+				return true;
 			}
-		})
-		.done(() => {
-			self.start();
-			console.log("Successfully loaded data");
-			return true;
 		})
 		.fail((e) => {
 			console.log(`Failed loading ${self.fileName}`);
@@ -59,7 +57,6 @@ let RunTranq = function() {
 		self.fileName = $jsonName.value;
 		self.setTitle();
 		self.askJson();
-		console.assert(gotJson);
 		return true;
 	}
 	self.onClear = (event) => {

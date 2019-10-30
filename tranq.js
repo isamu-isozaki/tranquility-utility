@@ -344,10 +344,10 @@ function start() {
 }
 
 function startvm() {
-	hwin = null
-	imgnum = 0
-	butnum = 0
-	labnum = 0
+	hwin = null;
+	imgnum = 0;
+	butnum = 0;
+	labnum = 0;
 	m = JSON.parse(tape);
 	sp = 65535;
 	fp = 65535;
