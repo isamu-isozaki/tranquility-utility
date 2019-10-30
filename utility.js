@@ -63,9 +63,17 @@ let RunTranq = function() {
 		event.preventDefault();
 		$stdout.val("");
 	}
+	self.getFile = () => {
+		let url = window.location.href;
+		let args = url.split("?")[1];
+		//get only f for now
+		self.fileName = args.split("f=")[1];
+	}
 	self.init = () => {
 		console.log("Initializing website");
 		self.fileName = $jsonName.value;
+		console.log("Gettind JSON of f variable if specified");
+		
 		console.log(`Setting initial filename to ${self.fileName}`);
 		self.setTitle();
 		self.askJson();
