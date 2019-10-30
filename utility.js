@@ -46,7 +46,8 @@ let RunTranq = function() {
 	self.setTitle = () => {
 		//Thanks https://stackoverflow.com/questions/9933662/split-array-into-two-arrays
 		//Also set textbox input value
-		$jsonName.val(self.fileName);
+		//console.log($jsonNam)
+		//$jsonName.val(self.fileName);
 		let indexOfPeriod = self.fileName.indexOf(".");
 		let title = self.fileName.slice(0, indexOfPeriod);
 		$title.text(title);
