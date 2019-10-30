@@ -64,10 +64,9 @@ let RunTranq = function() {
 		$stdout.val("");
 	}
 	self.getFile = () => {
-		let url = window.location.href;
-		let args = url.split("?")[1];
-		//get only f for now
-		self.fileName = args.split("f=")[1];
+		//Thanks https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
+		var params = new window.URLSearchParams(window.location.search);
+		self.fileName = params.get("f")
 	}
 	self.init = () => {
 		console.log("Initializing website");
