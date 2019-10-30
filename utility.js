@@ -40,6 +40,8 @@ let RunTranq = function() {
 		})
 		.fail((e) => {
 			console.log(`Failed loading ${self.fileName}`);
+			console.log(`Running ${defaultJson} instead`);
+			self.fileName = defaultJson;
 			return false;
 		});
 	};
@@ -55,13 +57,9 @@ let RunTranq = function() {
 		if(self.fileName == $jsonName.value)
 			return;
 		self.fileName = $jsonName.value;
-		let gotJson = self.askJson();
-		if(!gotJson) {
-			self.fileName = defaultJson;
-			gotJson = self.askJson();
-		}
+		self.setTitle();
+		self.askJson();
 		console.assert(gotJson);
-		self.setName();
 		return true;
 	}
 	self.onClear = (event) => {

@@ -10,21 +10,16 @@ This repository's purpose is to make tranquility in Drexel's CS-164 easier to ex
 
 ## How to use
 
-1. Clone this reposility into your home directory by running
+1. Clone this reposility and copy the contents of the git repository to your public_html directory into your home directory by running
    
    ```
    git clone https://github.com/isamu-isozaki/tranquility-utility.git
+   cp tranquility-utility/* ~/public_html
    ```
    
    in your tux server.
 
-2.  Copy the contents of the git repository to your public_html directory.
-   
-   ```
-   cp tranquility-utility/* ~/public_html
-   ```
-
-3. Go to https://cs.drexe.edu/~<insert_your_drexel_id>/tranq.html
+2. Go to https://cs.drexe.edu/~<insert_your_drexel_id>/tranq.html
 
 ## Bugs
 
