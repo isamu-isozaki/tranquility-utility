@@ -35,3 +35,7 @@ This repository's purpose is to make tranquility in Drexel's CS-164 easier to ex
 - Run tranquility code files directly from website
 
 - Run from url
+
+## Credits
+
+tranq.js is taken from slightly modifying Professor Brian Stuart's code from [here](https://www.cs.drexel.edu/~bls96/tvm.js)
