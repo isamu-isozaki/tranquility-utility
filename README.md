@@ -19,7 +19,18 @@ This repository's purpose is to make tranquility in Drexel's CS-164 easier to ex
    
    in your tux server.
 
+<<<<<<< HEAD
 2. Go to https://cs.drexe.edu/~<insert_your_drexel_id>/tranq.html
+=======
+2.  Copy the contents of the git repository to your public_html directory.
+
+   
+   ```
+   cp tranquility-utility/* ~/public_html
+   ```
+
+3. Go to https://cs.drexe.edu/~<insert_your_drexel_id>/tranq.html
+>>>>>>> 90ca0de9fc888658f4ac4bd8f4a793a3a86390a7
 
 ## Bugs
 
