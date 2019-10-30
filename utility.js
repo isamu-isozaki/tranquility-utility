@@ -73,7 +73,7 @@ let RunTranq = function() {
 		console.log("Initializing website");
 		self.fileName = $jsonName.value;
 		console.log("Gettind JSON of f variable if specified");
-		
+		self.getFile();
 		console.log(`Setting initial filename to ${self.fileName}`);
 		self.setTitle();
 		self.askJson();
