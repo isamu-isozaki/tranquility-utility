@@ -26,7 +26,7 @@ This repository's purpose is to make tranquility in Drexel's CS-164 easier to ex
    
    ```
    git clone https://github.com/isamu-isozaki/tranquility-utility.git
-   cp tranquility-utility/* ~/public_html
+   cp -r tranquility-utility/* ~/public_html
    ```
    
    in your tux server.
