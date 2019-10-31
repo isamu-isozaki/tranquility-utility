@@ -4,7 +4,7 @@ let tape = "";
 let RunTranq = function() {
 	let self = this;
 	let defaultJson = "hello.json";
-	let $jsonName = $("#jsonName")[0];
+	let $jsonName = $("#jsonName");
 	let $jsonSubmit = $("#jsonSubmit");
 	let $title = $("#title");
 	let $stdout = $("#stdout");
@@ -46,18 +46,16 @@ let RunTranq = function() {
 	self.setTitle = () => {
 		//Thanks https://stackoverflow.com/questions/9933662/split-array-into-two-arrays
 		//Also set textbox input value
-		//console.log($jsonNam)
-		//$jsonName.val(self.fileName);
 		let indexOfPeriod = self.fileName.indexOf(".");
 		let title = self.fileName.slice(0, indexOfPeriod);
 		$title.text(title);
 	}
 	self.onSubmit = (event) => {
 		event.preventDefault();
-		console.log(`Submit json file ${$jsonName.value}`);
-		if(self.fileName == $jsonName.value)
+		console.log(`Submit json file ${$jsonName[0].value}`);
+		if(self.fileName == $jsonName[0].value)
 			return;
-		self.fileName = $jsonName.value;
+		self.fileName = $jsonName[0].value;
 		self.setTitle();
 		self.askJson();
 		return true;
@@ -68,18 +66,28 @@ let RunTranq = function() {
 	}
 	self.getFile = () => {
 		//Thanks https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
-		var params = new window.URLSearchParams(window.location.search);
+		let params = new window.URLSearchParams(window.location.search);
 		self.fileName = params.get("f")
-		if(self.fileName == null) {
-			self.fileName = $jsonName.value;
 	}
-
+	self.getURLName = () => {
+		let url = window.location.href;
+		let htmlName = url.split("/");
+		htmlName = htmlName[htmlName.length-1];
+		htmlName = htmlName.split(".html")[0];
+		$jsonName.val(htmlName+".json");
+		defaultJson = htmlName+".json";
+		self.fileName = defaultJson;
 	}
 	self.init = () => {
 		console.log("Initializing website");
-		self.fileName = $jsonName.value;
 		console.log("Gettind JSON of f variable if specified");
+		self.getURLName();
 		self.getFile();
+		if(self.fileName == null) {
+			self.fileName = $jsonName[0].value;
+		} else {
+			$jsonName.val(self.fileName);
+		}
 		console.log(`Setting initial filename to ${self.fileName}`);
 		self.setTitle();
 		self.askJson();

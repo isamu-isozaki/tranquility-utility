@@ -10,6 +10,16 @@ This repository's purpose is to make tranquility in Drexel's CS-164 easier to ex
 
 - Can specify json file via going to https://cs.drexe.edu/~your_drexel_id/tranq.html?f=your_json_file_name.json
 
+- Can predict json file name given name if no f is specified. For example,
+  
+  [https://cs.drexe.edu/~your_drexel_id/adder.html](https://cs.drexe.edu/~your_drexel_id/tranq.html)
+  
+  will get adder.json while
+  
+  [https://cs.drexe.edu/~your_drexel_id/hello.html](https://cs.drexe.edu/~your_drexel_id/tranq.html)
+  
+  will search for hello.json
+
 ## How to use
 
 1. Clone this reposility and copy the contents of the git repository to your public_html directory into your home directory by running
