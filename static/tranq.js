@@ -210,7 +210,7 @@ function eval(l, pc) {
 		pc++;
 		break;
 	case 6:	/* break */
-		x = pop()
+		x = pop();
 		if(x != 0)
 			return -2;
 		break;

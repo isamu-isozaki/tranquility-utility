@@ -70,6 +70,10 @@ let RunTranq = function() {
 		//Thanks https://stackoverflow.com/questions/19491336/get-url-parameter-jquery-or-how-to-get-query-string-values-in-js
 		var params = new window.URLSearchParams(window.location.search);
 		self.fileName = params.get("f")
+		if(self.fileName == null) {
+			self.fileName = $jsonName.value;
+	}
+
 	}
 	self.init = () => {
 		console.log("Initializing website");

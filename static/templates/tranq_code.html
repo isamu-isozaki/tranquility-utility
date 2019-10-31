@@ -1,13 +1,13 @@
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script src="static/utility.js"></script>
-		<script src="static/tranq.js"></script>
+		<script src='{{url_for("static", filename = "utility.js")}}'></script>
+		<script src='{{url_for("static", filename = "tranq.js")}}'></script>
 	</head>
 	<body>
 		<h1 id="title"></h1>
-		<input id="jsonName" type="text" name="jsonName" value="hello.json">
-		<button id="jsonSubmit">Submit</button>
+		<textarea id="code" cols="80" rows="20"></textarea>
+		<button id="submit">Submit</button>
 		<hr>
 		<button id="start" onclick="start();">Start</button>
 		<button id="clear">Clear</button>
