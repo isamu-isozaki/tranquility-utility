@@ -31,7 +31,13 @@ This repository's purpose is to make tranquility in Drexel's CS-164 easier to ex
    
    in your tux server.
 
-2. Go to https://cs.drexe.edu/~your_drexel_id/tranq.html
+2. If you need a specific file name like hello.html for submission, just do
+   
+   ```
+   cp ~/public_html/tranq.html ~/public_html/hello.html
+   ```
+   
+   or whatever the name is and the site will access the json with that name. For example, in this case it will look for hello.json
 
 ## TODO
 
@@ -40,3 +46,29 @@ This repository's purpose is to make tranquility in Drexel's CS-164 easier to ex
 ## Credits
 
 tranq.js is taken from slightly modifying Professor Brian Stuart's code from [here](https://www.cs.drexel.edu/~bls96/tvm.js)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
