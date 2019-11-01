@@ -37,6 +37,9 @@ let RunTranq = function() {
 			}
 		})
 		.fail((e) => {
+			if(self.fileName == defaultJson) {
+				//Go to tranq_code.html
+			}
 			console.log(`Failed loading ${self.fileName}`);
 			console.log(`Running ${defaultJson} instead`);
 			self.fileName = defaultJson;
