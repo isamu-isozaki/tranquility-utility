@@ -85,7 +85,7 @@ function call(n) {
 		push(0);
 		break;
 	case -13:	/* makeimg */
-		hwin.document.write('<img id=img' + imgnum + ' />\n');
+		$(document.body).append('<img id=img' + imgnum + ' />\n');
 		push(imgnum);
 		imgnum++;
 		break;
@@ -102,20 +102,20 @@ function call(n) {
 		n = pop();
 		s = a2s(butname);
 		t1 = '<button id=but' + butnum + ' onclick="window.opener.call(' + n + ');">';
-		hwin.document.write(t1 + s + '</button>\n');
+		$(document.body).append(t1 + s + '</button>\n');
 		push(butnum);
 		butnum++;
 		break;
 	case -16:	/* html */
 		x = pop();
 		s = a2s(x);
-		hwin.document.write(s);
+		$(document.body).append(s);
 		push(0);
 		break;
 	case -17: /* makelabel */
 		labtxt = pop();
 		s = a2s(labtxt);
-		hwin.document.write('<label id=lab' + labnum + '>' + s + '</label>\n');
+		$(document.body).append('<label id=lab' + labnum + '>' + s + '</label>\n');
 		push(labnum);
 		labnum++;
 		break;
