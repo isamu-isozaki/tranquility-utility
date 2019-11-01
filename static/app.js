@@ -33,17 +33,17 @@ let RunTranq = function() {
 				}
 				self.start();
 				console.log("Successfully loaded data");
+				console.log("Setting title and input box")
+				self.setTitle();
+				self.setJSONInput();
 				return true;
 			}
 		})
 		.fail((e) => {
-			if(self.fileName == defaultJson) {
-				//Go to tranq_code.html
-			}
 			console.log(`Failed loading ${self.fileName}`);
 			console.log(`Running ${defaultJson} instead`);
 			self.fileName = defaultJson;
-			return false;
+			self.askJson();
 		});
 	};
 	self.setTitle = () => {
@@ -72,14 +72,16 @@ let RunTranq = function() {
 		let params = new window.URLSearchParams(window.location.search);
 		self.fileName = params.get("f")
 	}
+	self.setJSONInput = () => {
+		$jsonName.val(self.fileName);
+	}
 	self.getURLName = () => {
 		let url = window.location.href;
 		let htmlName = url.split("/");
 		htmlName = htmlName[htmlName.length-1];
 		htmlName = htmlName.split(".html")[0];
-		$jsonName.val(htmlName+".json");
-		defaultJson = htmlName+".json";
-		self.fileName = defaultJson;
+		self.fileName = htmlName+".json";
+		self.setJSONInput();
 	}
 	self.init = () => {
 		console.log("Initializing website");
@@ -89,7 +91,7 @@ let RunTranq = function() {
 		if(self.fileName == null) {
 			self.fileName = $jsonName[0].value;
 		} else {
-			$jsonName.val(self.fileName);
+			self.setJSONInput();
 		}
 		console.log(`Setting initial filename to ${self.fileName}`);
 		self.setTitle();
