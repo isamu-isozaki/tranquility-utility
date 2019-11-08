@@ -102,7 +102,7 @@ function call(n) {
 		n = pop();
 		s = a2s(butname);
 		t1 = '<button id=but' + butnum + ' onclick="window.opener.call(' + n + ');">';
-		$(document.body).append(t1 + s + '</button>\n');
+		hwin.document.write(t1 + s + '</button>\n');
 		push(butnum);
 		butnum++;
 		break;

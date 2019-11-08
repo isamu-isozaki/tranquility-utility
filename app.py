@@ -25,10 +25,10 @@ def tranq_code(fileName):
 
             with open(json_file) as f:
                 output = f.read()
-            return output
+            return output, 200
         except Exception as e:
             print(f"{e}. tranq file: {tranq_file}. json file: {json_file}. code: {code}")
-            return "error"
+            return f"{e}", 500
     return render_template('tranq_code.html', fileName = fileName)
 
 @app.route('/tranq_json/<string:fileName>', methods = ['GET', 'POST'])

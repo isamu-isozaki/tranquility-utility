@@ -9,6 +9,7 @@ let RunTranq = function() {
 	let $title = $("#title");
 	let $stdout = $("#stdout");
 	let $clear = $("#clear");
+	let $code = $("#code");
 	self.fileName = "";
 	self.start = () => {
 		startvm();
